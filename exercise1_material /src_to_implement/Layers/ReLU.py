@@ -4,6 +4,8 @@ from Layers.Base import BaseLayer
 class ReLU(BaseLayer):
     def __init__(self):
         super().__init__()
+        print("Relu constructor called........")
+
         self._input_tensor = None
 
     def forward(self, input_tensor):

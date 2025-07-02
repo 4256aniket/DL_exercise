@@ -4,6 +4,7 @@ from Layers.Base import BaseLayer
 class FullyConnected(BaseLayer):
     def __init__(self, input_size, output_size):
         super().__init__()
+        print("FullyConnected constructor called........")
         self.trainable = True
         self.weights = np.random.uniform(0, 1, (input_size + 1, output_size))
         self._optimizer = None

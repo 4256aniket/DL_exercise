@@ -4,6 +4,8 @@ from Layers.Base import BaseLayer
 class SoftMax(BaseLayer):
     def __init__(self):
         super().__init__()
+        print("SoftMax constructor called........")
+
         self.y_hat = None 
 
     def forward(self, input_tensor):

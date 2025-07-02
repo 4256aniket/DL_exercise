@@ -1,5 +1,7 @@
 class BaseLayer:
     def __init__(self):
+        print("Base constructor called........")
+
         self.trainable = False
         self._optimizer = None
     
