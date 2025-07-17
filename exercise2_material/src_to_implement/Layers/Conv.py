@@ -32,9 +32,10 @@ class Conv(Base.BaseLayer):
             input_tensor = input_tensor[:, :, :, np.newaxis]
         self.lastShape = input_tensor.shape
         padded_image = np.zeros((input_tensor.shape[0], input_tensor.shape[1], input_tensor.shape[2] + self.convolution_shape[1] - 1, input_tensor.shape[3] + self.convolution_shape[2] - 1))
-        p1 = int(self.convolution_shape[1]//2 == self.convolution_shape[1]/2)
-        p2 = int(self.convolution_shape[2]//2 == self.convolution_shape[2]/2)
-        if self.convolution_shape[1]//2 == 0 and self.convolution_shape[2]//2 == 0:
+        p1 = int(self.convolution_shape[1] % 2 == 0)
+        p2 = int(self.convolution_shape[2] % 2 == 0)
+
+        if self.convolution_shape[1]//2 == 0 and self.convolution_shape[2]//2 == 0: # if kernel size is 1
             padded_image = input_tensor
         else:
             padded_image[:, :, (self.convolution_shape[1]//2):-(self.convolution_shape[1]//2)+p1, (self.convolution_shape[2]//2):-(self.convolution_shape[2]//2)+p2] = input_tensor
@@ -63,7 +64,7 @@ class Conv(Base.BaseLayer):
                             else:
                                 output_tensor[n, f, i, j] = 0
         if not self.conv2d:
-            output_tensor = output_tensor.squeeze(axis = 3) # just to solve error in 1d case
+            output_tensor = output_tensor.squeeze(axis = 3) #for n 1d case
         return output_tensor
 
     @property

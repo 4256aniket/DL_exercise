@@ -1,4 +1,5 @@
 import unittest
+import NeuralNetwork
 from Layers import *
 from Optimization import *
 import numpy as np
@@ -7,6 +8,7 @@ from scipy.ndimage.filters import gaussian_filter
 import matplotlib.pyplot as plt
 import os
 import tabulate
+import argparse
 
 ID = 2  # identifier for dispatcher
 
@@ -1035,7 +1037,7 @@ class TestNeuralNetwork2(unittest.TestCase):
                                           "wrong with your SGD with momentum.")
 
     def test_iris_data_with_adam(self):
-        net = Optimizers.NeuralNetwork(Optimizers.Adam(1e-2, 0.9, 0.999),
+        net = NeuralNetwork.NeuralNetwork(Optimizers.Adam(1e-2, 0.9, 0.999),
                                        Initializers.UniformRandom(),
                                        Initializers.Constant(0.1))
         categories = 3

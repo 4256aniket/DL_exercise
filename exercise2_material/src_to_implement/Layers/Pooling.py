@@ -28,7 +28,7 @@ class Pooling(Base.BaseLayer):
                 self.x_s[:, :, a, b] = x
                 self.y_s[:, :, a, b] = y
                 output_tensor[:, :, a, b] = np.choose(output_pos, np.moveaxis(temp, 2, 0))         
-                #np.max(input_tensor[:, :, i:i+self.pooling_shape[0], j:j+self.pooling_shape[1]], axis =(2, 3))
+
                 
         return output_tensor
     

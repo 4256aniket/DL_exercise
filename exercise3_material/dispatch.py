@@ -5,12 +5,12 @@ from zipfile import ZipFile
 
 exercise_files = {0: ["generator.py", "main.py", "pattern.py"],
                   1: ["FullyConnected.py", "ReLU.py", "SoftMax.py",
-                      "Loss.py", "Optimizers.py", "Optimizers.py", "Base.py"],
+                      "Loss.py", "Optimizers.py", "NeuralNetwork.py", "Base.py"],
                   2: ["FullyConnected.py", "ReLU.py", "SoftMax.py",
-                      "Loss.py", "Optimizers.py", "Optimizers.py", "Conv.py", "Flatten.py", "Initializers.py",
+                      "Loss.py", "Optimizers.py", "NeuralNetwork.py", "Conv.py", "Flatten.py", "Initializers.py",
                       "Pooling.py", "Base.py"],
                   3: ["FullyConnected.py", "ReLU.py", "Sigmoid.py", "SoftMax.py", "Constraints.py",
-                      "Loss.py", "Optimizers.py", "Optimizers.py", "Conv.py", "Flatten.py", "Initializers.py",
+                      "Loss.py", "Optimizers.py", "NeuralNetwork.py", "Conv.py", "Flatten.py", "Initializers.py",
                       "Pooling.py", "Base.py", "BatchNormalization.py", "Dropout.py", "RNN.py", "TanH.py"],
                   4: ["data.py", "train.py", "trainer.py", "model.py"]}
 
